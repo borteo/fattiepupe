@@ -4,30 +4,28 @@
     .pure-g-r.l-centered.articles
 
       .pure-u-1.article
-        .shadow
-          = image_tag("adriana.jpg", :class => "pure-u")
+        .image.pure-u{:src => "/assets/adriana.png", :style => "background-image: url('/assets/adriana.png');"}
 
         %p.sentence
           All'et&agrave; di 70 anni, il nostro cuore avr&agrave; battuto per circa 2,5 miliardi di volte
 
       .pure-u-1.article
-        .shadow
-          = image_tag("boobs.jpg", :class => "pure-u")
+        .image.pure-u{:src => "/assets/boobs.png", :style => "background-image: url('/assets/boobs.png');"}
 
         %p.sentence
           Tutti i pianeti del sistema solare ruotano in senso antiorario, tranne Venere che ruota in senso orario
 
-      .pure-u-1-2
-        .l-box
-          %p
-            - @posts.each do |post|
-              #{post.name}
-              #{post.title}
-              #{post.content}
-              #{post.image}
-              #{link_to 'Show', post}
-              #{link_to 'Edit', edit_post_path(post)}
-              #{link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' } }
+      / .pure-u-1-2
+      /   .l-box
+      /     %p
+      /       - @posts.each do |post|
+      /         #{post.name}
+      /         #{post.title}
+      /         #{post.content}
+      /         #{post.image}
+      /         #{link_to 'Show', post}
+      /         #{link_to 'Edit', edit_post_path(post)}
+      /         #{link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' } }
 
-          %p
-            #{link_to "Post it", posts_path}
+      /     %p
+      /       #{link_to "Post it", posts_path}

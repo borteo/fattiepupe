@@ -1,0 +1,23 @@
+%h1 Listing galleries
+
+%table
+  %tr
+    %th Title
+    %th Kind
+    %th Image
+    %th
+    %th
+    %th
+
+  - @galleries.each do |gallery|
+    %tr
+      %td= gallery.title
+      %td= gallery.kind
+      %td= gallery.image
+      %td= link_to 'Show', gallery
+      %td= link_to 'Edit', edit_gallery_path(gallery)
+      %td= link_to 'Destroy', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gallery', new_gallery_path

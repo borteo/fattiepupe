@@ -1,0 +1,13 @@
+#gallery
+  %ul#grid
+    - @gallery.photos.each do |pic|
+      %li{:id => "photo_#{pic.id}"}
+        = image_tag(pic.photo_file.url(:thumb).to_s)
+        = link_to "Delete Photo",                   |
+          photo_path(pic),                          |
+          :method => "delete",                      |
+          :confirm => "#{t("web-app-theme.confirm", |
+          :default => "Are you sure?")}",           |
+          :class => 'btn btn-danger',               |
+          :remote => true                           |
+  .clear

@@ -56,6 +56,7 @@ class PostsController < ApplicationController
       end
     end
   end
+  
 
   # PUT /posts/1
   # PUT /posts/1.json

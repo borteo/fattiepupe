@@ -6,7 +6,7 @@
     = render 'chromeframe'
 
     #layout.pure-g-r
-      = render 'flashes'
+      / = render 'flashes'
       = render 'header'
 
       = yield
@@ -15,4 +15,11 @@
 
     -# Javascript at the bottom for fast page loading
     = render 'javascripts'
+
     = javascript_include_tag "http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51aa693519350bba"
+    
+    %script{:src => "/jquery-file-upload/vendor/jquery.ui.widget.js"}
+    %script{:src => "/jquery-file-upload/jquery.iframe-transport.js"}
+    %script{:src => "/jquery-file-upload/jquery.fileupload.js"}
+    - javascript_include_tag "http://gettopup.com/releases/latest/top_up-min.js"
+    = yield :js

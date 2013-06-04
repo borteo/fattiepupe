@@ -29,9 +29,6 @@ gem 'html5-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -44,7 +41,7 @@ gem 'html5-rails'
 gem "thin", ">= 1.5.0"
 gem "mongoid", ">= 3.1.2"
 gem "haml-rails", ">= 0.4"
-gem "html2haml", ">= 1.0.1", :group => :development
+gem "simple_form", :group => :development
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
 gem "mongoid-rspec", ">= 1.7.0", :group => :test
@@ -59,3 +56,13 @@ gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+
+
+# Multiple files upload
+gem "aws-sdk", "~> 1.3.4"
+gem "fog", "~> 1.3.1"
+gem "carrierwave-mongoid", :require => "carrierwave/mongoid"
+gem "mini_magick", "~> 3.4"
+
+# To use Jbuilder templates for JSON
+gem "jbuilder"

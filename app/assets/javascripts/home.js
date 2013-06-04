@@ -30,5 +30,7 @@ menuLink.onclick = function (e) {
 
 // Share it!
 var addthis_config = {     
-  services_overlay:'facebook,twitter,email,more'
+  services_overlay:'facebook,twitter,email,more',
+  ui_use_css: true,
+  ui_click: true
 }

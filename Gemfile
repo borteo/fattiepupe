@@ -41,7 +41,7 @@ gem 'html5-rails'
 gem "thin", ">= 1.5.0"
 gem "mongoid", ">= 3.1.2"
 gem "haml-rails", ">= 0.4"
-gem "simple_form", :group => :development
+gem "simple_form"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
 gem "mongoid-rspec", ">= 1.7.0", :group => :test

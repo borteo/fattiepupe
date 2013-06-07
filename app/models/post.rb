@@ -8,8 +8,8 @@ class Post
 
   has_mongoid_attached_file :image,
     :storage        => :s3,
-    :bucket_name    => 'borteo',
     :path           => ':image/:id/:style.:extension',
+    :bucket         => 'borteo',
     :url            => ':s3_alias_url',
     :s3_credentials => {
       :access_key_id      => ENV['S3_ACCESS_KEY'],
@@ -18,7 +18,6 @@ class Post
     :styles => {
       :original => ['640x720>', :jpg],
       :small    => ['240x320#',   :jpg],
-    },
-    :convert_options => { :all => '-background white -flatten +matte' }
+    }
 
 end

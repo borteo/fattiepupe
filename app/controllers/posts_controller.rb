@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.author = current_user.name
 
     respond_to do |format|
       format.html # new.html.erb

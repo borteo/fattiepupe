@@ -1,8 +1,7 @@
 #main.pure-u
   .content
 
-    - flash.each do |name, msg|
-      = content_tag :div, msg, :id => "flash_#{name}", :class => "error" if msg.is_a?(String)
+    = render '/shared/error'
 
     = simple_form_for resource, :wrapper => :pure, :as => resource_name, :url => session_path(resource_name), :html => {:class => "pure-form pure-form-aligned"} do |f|
       %fieldset

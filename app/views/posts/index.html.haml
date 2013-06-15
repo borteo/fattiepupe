@@ -20,9 +20,9 @@
       - @posts.each do |post|
         %tr
           %td= post.author
-          %td= post.title
+          %td= link_to post.title, post
           %td= post.content
-          %td= post.image
+          %td= image_tag post.photo.url(:thumb), size:"80x107"
           %td= link_to 'Show', post
           %td= link_to 'Edit', edit_post_path(post)
           %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }

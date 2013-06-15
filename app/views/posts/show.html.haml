@@ -11,7 +11,7 @@
   = @post.content
 %p
   %b Image:
-  = @post.image
+  = image_tag @post.photo
 
 = link_to 'Edit', edit_post_path(@post)
 \|

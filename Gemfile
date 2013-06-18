@@ -59,13 +59,13 @@ gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 
 
 # Single files upload
-gem "aws-sdk", "~> 1.3.4"
-gem "mongoid-paperclip", :require => "mongoid_paperclip"
+#gem "aws-sdk", "~> 1.3.4"
+#gem "mongoid-paperclip", :require => "mongoid_paperclip"
 
 # Multiple files upload
-# gem "fog", "~> 1.3.1"
-# gem "carrierwave-mongoid", :require => "carrierwave/mongoid"
-# gem "mini_magick", "~> 3.4"
+gem "fog", "~> 1.3.1"
+gem "carrierwave-mongoid", :require => "carrierwave/mongoid"
+gem "mini_magick", "~> 3.4"
 
 # To use Jbuilder templates for JSON
 gem "jbuilder"

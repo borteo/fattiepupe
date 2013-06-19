@@ -1,7 +1,7 @@
 
 class PostsController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!
   # GET /posts
   # GET /posts.json
   def index
@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.author = current_user.name
+    @tags = Tag.all
 
     respond_to do |format|
       format.html # new.html.erb

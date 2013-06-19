@@ -1,0 +1,13 @@
+#main.pure-u
+  .content
+
+    = render 'shared/navigation'
+    = render 'shared/error'
+    
+    %h2 Edit Tag
+
+    = render 'form'
+
+    = link_to 'Show', @tag
+    \|
+    = link_to 'Back', tags_path

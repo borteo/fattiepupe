@@ -30,7 +30,7 @@ gem 'html5-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem "unicorn", :group => :development
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -38,7 +38,6 @@ gem 'html5-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "thin", ">= 1.5.0"
 gem "mongoid", ">= 3.1.2"
 gem "haml-rails", ">= 0.4"
 gem "simple_form"

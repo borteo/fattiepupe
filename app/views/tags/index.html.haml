@@ -1,0 +1,24 @@
+#main.pure-u
+  .content
+
+    = render 'shared/navigation'
+    = render 'shared/error'
+
+    %h2 Listing tags
+
+    %table.pure-table
+      %thead
+        %tr
+          %th Name
+          %th
+          %th
+          %th
+
+      - @tags.each do |tag|
+        %tr
+          %td= tag.name
+          %td= link_to 'Show', tag
+          %td= link_to 'Edit', edit_tag_path(tag)
+          %td= link_to 'Destroy', tag, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+    = link_to 'New Tag', new_tag_path

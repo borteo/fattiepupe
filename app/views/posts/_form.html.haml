@@ -10,12 +10,9 @@
 
     = f.input :author, readonly: true
     = f.input :title
+    = f.association :tags, :required => false, :collection => @tags, :as => :check_boxes, :label => "Tags:"
     = f.input :content
     = f.input :photo
     
-    
     .pure-controls
       = f.button :button, 'Save', :class => "pure-button-primary"
-
-
-#{current_user.name}

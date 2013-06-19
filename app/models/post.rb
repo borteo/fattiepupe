@@ -8,4 +8,5 @@ class Post
   
   mount_uploader :photo, PhotoUploader
 
+  has_and_belongs_to_many :tags
 end

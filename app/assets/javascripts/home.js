@@ -1,3 +1,4 @@
+// Left menu
 var menu = document.getElementById('menu');
 var menuLink = document.getElementById('menuLink');
 var layout = document.getElementById('layout');
@@ -26,3 +27,10 @@ menuLink.onclick = function (e) {
   toggleClass(layout, active);
   toggleClass(menu, active);
 }; 
+
+// Share it!
+var addthis_config = {     
+  services_overlay:'facebook,twitter,email,more',
+  ui_use_css: true,
+  ui_click: true
+}

@@ -3,11 +3,11 @@
 
     = render 'shared/navigation'
     = render 'shared/error'
-
-    %h2 New Post
+    
+    %h2 Edit Tag
 
     = render 'form'
 
-    = link_to 'Back', posts_path
-
-
+    = link_to 'Show', @tag
+    \|
+    = link_to 'Back', tags_path

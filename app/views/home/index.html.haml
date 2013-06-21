@@ -1,16 +1,19 @@
 #main.pure-u    
   
+  / %a.addthis_counter{"addthis:description" => "An Example Description", "addthis:title" => "An Example Title", "addthis:url" => "http://example.com", :href => "http://www.addthis.com/bookmark.php"}
+
+  
   .content
     .pure-g-r.l-centered.articles
 
       .pure-u-1.article
-        .image.pure-u{:src => "/assets/adriana.png", :style => "background-image: url('/assets/adriana.png');"}
+        = image_tag("adriana.png", :class => "pure-u addthis_shareable", "addthis:url" => "http://www.fattiepupe.herokuapp.com", "addthis:title" => "fattiepupe.com_cultura")
 
         %p.sentence
           All'et&agrave; di 70 anni, il nostro cuore avr&agrave; battuto per circa 2,5 miliardi di volte
 
       .pure-u-1.article
-        .image.pure-u{:src => "/assets/boobs.png", :style => "background-image: url('/assets/boobs.png');"}
+        = image_tag("boobs.png", :class => "pure-u addthis_shareable")
 
         %p.sentence
           Tutti i pianeti del sistema solare ruotano in senso antiorario, tranne Venere che ruota in senso orario

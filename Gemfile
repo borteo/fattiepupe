@@ -57,16 +57,6 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 
 
-<<<<<<< HEAD
-# Multiple files upload
-
-gem 'aws-sdk', '~> 1.3.4'
-gem "fog", "~> 1.3.1"
-gem 'jquery-rails'
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-gem "mini_magick", "~> 3.4"
-gem 'jbuilder'
-=======
 # Single files upload
 #gem "aws-sdk", "~> 1.3.4"
 #gem "mongoid-paperclip", :require => "mongoid_paperclip"
@@ -78,4 +68,3 @@ gem "mini_magick", "~> 3.4"
 
 # To use Jbuilder templates for JSON
 gem "jbuilder"
->>>>>>> upstream/simple_upload

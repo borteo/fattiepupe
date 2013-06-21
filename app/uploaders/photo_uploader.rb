@@ -2,6 +2,11 @@
 
 class PhotoUploader < CarrierWave::Uploader::Base
 
+  def default_url
+    "/assets/no_image.jpg"
+    #"/images" + [version_name, "adriana.jpg"].compact.join('_')
+  end
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick

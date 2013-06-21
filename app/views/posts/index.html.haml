@@ -15,8 +15,8 @@
       %thead
         %tr
           %th Image
-          %th Author
           %th Title
+          %th Author
           %th Content
           %th
           %th
@@ -24,15 +24,17 @@
 
       - @posts.each do |post|
         %tr
-          %td= link_to image_tag(post.photo.url(:thumb), size:"80x107"), post
+          %td= link_to image_tag(post.photo.url(:thumb), style:"width:100px"), post
+          %td
+            %p
+              = link_to post.title, post
+            %p
+              = link_to "0 Comments and 0 Reactions", "/posts/#{post.id}#disqus_thread", style:"font-size:75%;"
           %td= post.author
-          %td= link_to post.title, post
           %td= post.content
           %td= link_to 'Show', post
           %td= link_to 'Edit', edit_post_path(post)
           %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-
 
     %h2 Users
     %table.pure-table

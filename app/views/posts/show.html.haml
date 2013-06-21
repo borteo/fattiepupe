@@ -9,6 +9,10 @@
     
     %p#notice= notice
 
+    = link_to 'Edit', edit_post_path(@post)
+    \|
+    = link_to 'Back', posts_path
+    
     %p
       = image_tag(@post.photo.url(:medium), size:"480x640")
     %p
@@ -22,6 +26,9 @@
       %b Content:
       = @post.content
 
-    = link_to 'Edit', edit_post_path(@post)
-    \|
-    = link_to 'Back', posts_path
+
+    
+    %br
+    %br
+    
+    = render :partial => 'disqus'

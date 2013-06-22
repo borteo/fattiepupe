@@ -1,0 +1,26 @@
+#main.pure-u
+  .content
+    .pure-g-r.l-centered.articles
+      .pure-u-1.article
+      
+        %h1 
+          = @post.title
+        %br
+        
+        %p
+          = image_tag(@post.photo.url(:medium), size:"480x640")
+          
+        %p
+          %b Content:
+          = @post.content
+        %p
+          %b Tags:
+          - @post.tags.each do |tag|
+            = tag.name
+
+
+    
+        %br
+        %br
+    
+        = render :partial => 'disqus'

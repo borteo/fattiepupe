@@ -8,11 +8,13 @@ FattiEPupe::Application.routes.draw do
 
 
   root :to => "home#index"
+  match '/home' => 'home#index', :as => 'home_path'
 
   devise_for :users
   resources :users
 
   resources :posts
+  resources :home
 
   resources :tags
   

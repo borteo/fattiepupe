@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.recent
     
     respond_to do |format|
       format.html # index.html.erb

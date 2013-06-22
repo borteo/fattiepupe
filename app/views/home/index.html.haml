@@ -11,6 +11,7 @@
     .pure-g-r.l-centered.articles
     
       - @posts.each do |post|
+        
         %br
         / Non so come identare la roba qua sotto nel modo giusto!
         .pure-u-1.article
@@ -20,10 +21,11 @@
           "addthis:title" => "fattiepupe.com_cultura"),
           home_path(post)
           
+          
           %p.sentence
-            post.title
+            = post.title
           %p.sentence
-            post.body
+            = post.content
 
       / .pure-u-1-2
       /   .l-box

@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.recent
+    if params[:categoria]
+      @cat = Category.where(:name => params[:categoria]).last
+      @posts = Post.category(@cat)
+    end
     
     respond_to do |format|
       format.html # index.html.erb
@@ -21,5 +25,18 @@ class HomeController < ApplicationController
       format.json { render json: @post }
     end
   end
+  
+  # GET /categories
+  # GET /categories.json
+  def categories
+    @categories = Category.all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @categories }
+    end
+  end
+  
+
   
 end

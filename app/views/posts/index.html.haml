@@ -16,23 +16,21 @@
         %tr
           %th Image
           %th Title
+          %th Category
           %th Author
-          %th
-          %th
-          %th
+          %th Actions
 
       - @posts.each do |post|
         %tr
-          %td= link_to image_tag(post.photo.url(:thumb), style:"width:100px"), post
+          %td= link_to image_tag(post.photo.url(:thumb), style:"width:120px"), post
           %td
-            %p
-              = link_to post.title, post
-            %p
-              = link_to "0 Comments and 0 Reactions", "/home/#{post.id}#disqus_thread", style:"font-size:75%;"
+            %p= link_to post.title, post
+            %p= link_to "0 Comments and 0 Reactions", "/home/#{post.id}#disqus_thread", style:"font-size:75%;"
+          %td= post.category.name if post.category
           %td= post.author
-          %td= link_to 'Show', post
-          %td= link_to 'Edit', edit_post_path(post)
-          %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td
+            %p= link_to 'Edit', edit_post_path(post), :class => "pure-button pure-button-secondary"
+            %p= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "pure-button pure-button-error"
 
     %h2 Users
     %table.pure-table

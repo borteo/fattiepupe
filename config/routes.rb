@@ -1,5 +1,11 @@
 FattiEPupe::Application.routes.draw do
 
+  resources :categories
+  match '/categorie' => 'home#categories', :as => 'categories_public_path'
+
+
+  match '/contatti' => 'contacts#index', :as => 'contacts_path'
+
   resources :galleries do
     resources :photos, :except => [:update, :edit]
   end

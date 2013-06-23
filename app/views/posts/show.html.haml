@@ -19,6 +19,9 @@
       %b Author:
       = @post.author
     %p
+      %b Category:
+      = @post.category.name if @post.category
+    %p
       %b Tags:
       - @post.tags.each do |tag|
         = tag.name

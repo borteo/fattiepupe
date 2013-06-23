@@ -4,10 +4,10 @@
     = render 'shared/navigation'
     = render 'shared/error'
 
-    %h2= @tag.name
+    %h2= @category.name
 
     %p#notice= notice
 
-    = link_to 'Edit', edit_tag_path(@tag)
+    = link_to 'Edit', edit_category_path(@category)
     \|
-    = link_to 'Back', tags_path
+    = link_to 'Back', categories_path

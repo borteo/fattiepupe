@@ -1,0 +1,16 @@
+#main.pure-u
+  .content
+  
+    = render 'shared/navigation'
+    = render 'shared/error'
+    
+    %h1 Admin
+    
+    %p Pagina admin super semplice, da tenere finché non sarà pronto il Menu qui sopra!
+  
+    .pure-controls
+      = link_to 'Posts Admin', posts_path, :class => "pure-button pure-button-primary"
+      |
+      = link_to 'Tags Admin', tags_path, :class => "pure-button pure-button-secondary"
+      |
+      = link_to 'Categories Admin', categories_path, :class => "pure-button pure-button-primary"

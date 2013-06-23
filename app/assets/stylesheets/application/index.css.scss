@@ -28,3 +28,17 @@
 @import 'font_face';
 @import 'layout';
 @import 'media_queries';
+
+ul.grid {
+	list-style-type: none;
+	}
+
+ul.grid li {
+	padding-right: 50px;
+	float: left;
+	width: 25%;
+}
+
+div.content {
+	width:80%;
+}

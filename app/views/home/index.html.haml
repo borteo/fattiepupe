@@ -6,8 +6,11 @@
   .content
     
     .pure-g-r.l-centered
-      %h1 Fatti e Pupe.it
-    
+      %h1
+        Fatti e Pupe.it
+        -if params[:categoria]
+          = " - #{params[:categoria]}"
+      
     .pure-g-r.l-centered.articles
     
       - @posts.each do |post|

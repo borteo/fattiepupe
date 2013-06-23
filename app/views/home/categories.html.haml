@@ -1,13 +1,13 @@
 #main.pure-u
   .content
     .pure-g-r.l-centered
-      .pure-u-1.article
+      .pure-u-1.categories
         %h1 Categorie
-        %table.pure-table
-          %thead
-            %tr
-              %th Nome
-
+        %ul.grid
           - @categories.each do |category|
-            %tr
-              %td= link_to category.name, "/home?categoria=#{category.name}"
+            -if category.posts.last  
+              %li
+                .pure-g-r.l-centered.articles
+                  %p= link_to image_tag(category.posts.last.photo.url(:thumb), size:""), "/home?categoria=#{category.name}"
+                %h2= link_to category.name, "/home?categoria=#{category.name}"
+                

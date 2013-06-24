@@ -1,6 +1,7 @@
 FattiEPupe::Application.routes.draw do
 
   match '/admin' => 'admin#index', :as => 'admin_path'
+  match '/random' => 'home#random', :as => 'random_path'
 
   resources :categories
   match '/categorie' => 'home#categories', :as => 'categories_public_path'

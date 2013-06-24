@@ -37,6 +37,17 @@ class HomeController < ApplicationController
     end
   end
   
+  # GET /random
+  # GET /random.json
+  def random
+      @post = Post.offset(rand(Post.count)).first
+    
+    respond_to do |format|
+      format.html { redirect_to home_path(@post) }
+      format.json { render json: @post }
+    end
+  end
+  
 
   
 end

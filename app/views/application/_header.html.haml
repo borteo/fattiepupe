@@ -4,15 +4,24 @@
 #menu.pure-u
   .pure-menu.pure-menu-open
     %a.pure-menu-heading{:href => "/"}
-      Fatti per/da uomini.com 
+      Fatti & Pupe 
     %ul
       %li
-        %a{:href => "/categorie/"} Categorie
+        %a{:href => "/categorie/"}  Categorie
       %li
-        %a{:href => "/dettagli/"} Dettagli
+        %a{:href => "/dettagli/"}   Dettagli
       %li
-        %a{:href => "/contatti/"} Contatti
+        %a{:href => "/random/"}     Random      
       %li
-        %a{:href => "/iscriviti/"} Iscriviti
+        %a{:href => "/contatti/"}   Contatti
       %li
-        %a{:href => "/galleries/"} Gallerie
+        %a{:href => "/iscriviti/"}  Iscriviti
+      -if current_user
+        %li
+          %a{:href => "/admin"}     Admin
+
+
+
+
+/ %a Sfoglia Categorie: 
+/ %a= select_tag :create_model, options_for_select(Category.all.collect{ |u| [u.name, u.id] })

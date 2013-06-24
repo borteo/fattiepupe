@@ -1,0 +1,15 @@
+= simple_form_for @tag, :wrapper => :pure, :html => {:class => "pure-form pure-form-aligned"} do |f|
+      
+  %fieldset
+    - if @tag.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@tag.errors.count, "error")} prohibited this tag from being saved:"
+        %ul
+          - @tag.errors.full_messages.each do |msg|
+            %li= msg
+
+    = f.input :name
+    
+    
+    .pure-controls
+      = f.button :button, 'Save', :class => "pure-button-primary"

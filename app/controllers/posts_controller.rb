@@ -2,10 +2,13 @@
 class PostsController < ApplicationController
 
   before_filter :authenticate_user!
+  before_filter :tags_and_categories, :only => [:edit, :new]
+  
+  
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.recent
     @users = User.all
 
     respond_to do |format|
@@ -29,6 +32,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.author = current_user.name
 
     respond_to do |format|
       format.html # new.html.erb
@@ -85,4 +89,13 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
+  def tags_and_categories
+    @tags = Tag.all
+    @categories = Category.all
+  end
+
 end
+
+

@@ -6,7 +6,7 @@
     = render 'chromeframe'
 
     #layout.pure-g-r
-      = render 'flashes'
+      / = render 'flashes'
       = render 'header'
 
       = yield
@@ -21,3 +21,4 @@
     %script{:src => "/jquery-file-upload/jquery.fileupload.js"}
     - javascript_include_tag "http://gettopup.com/releases/latest/top_up-min.js"
     = yield :js
+    = render :partial => 'disqus_counter'

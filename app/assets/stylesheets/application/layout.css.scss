@@ -7,6 +7,9 @@
 //-----------------------------------------
 
 
+
+
+
 body {
     color: $font-color;
     font-family: $font-family;
@@ -124,7 +127,7 @@ aside {
 /* The content div is placed as a wrapper around all the docs */
 .content {
     margin: 0 auto;
-    width: 70%;
+    width: 90%; /* PER MATTEO: Ho messo width 90%, che secondo me rende il sito più spazioso! */
     margin-bottom:50px;
 }
     .content p {
@@ -574,4 +577,22 @@ pre .attribute, pre .variable, pre .support {
 pre .string, pre .support.value  {
     font-weight: normal;
     color: #3b8bba; /* skinbuilder block-mine-text-low with #1f8dd6 as primary */
+}
+
+
+
+
+//-----------------------------------------
+// Categories Page
+//-----------------------------------------
+
+
+ul.grid {
+	list-style-type: none;
+	}
+
+ul.grid li {
+	padding-right: 5%;
+	float: left;
+	width: 25%;
 }

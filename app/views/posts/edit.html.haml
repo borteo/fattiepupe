@@ -1,7 +1,13 @@
-%h1 Editing post
+#main.pure-u
+  .content
 
-= render 'form'
+    = render 'shared/navigation'
+    = render 'shared/error'
+    
+    %h2 Edit Post
 
-= link_to 'Show', @post
-\|
-= link_to 'Back', posts_path
+    = render 'form'
+
+    = link_to 'Show', @post
+    \|
+    = link_to 'Back', posts_path

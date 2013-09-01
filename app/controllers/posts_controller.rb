@@ -1,12 +1,11 @@
 
 class PostsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:show, :index]
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
-    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,6 +28,8 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.author = current_user.name
+    @tags = Tag.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,6 +40,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @tags = Tag.all
   end
 
   # POST /posts
@@ -56,6 +58,7 @@ class PostsController < ApplicationController
       end
     end
   end
+  
 
   # PUT /posts/1
   # PUT /posts/1.json

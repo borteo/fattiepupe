@@ -1,2 +1,7 @@
-%p
-  User: #{@user.name}
+#main.pure-u
+  .content
+
+    = render 'shared/navigation'
+    = render 'shared/error'
+  
+    %h2 #{@user.name}

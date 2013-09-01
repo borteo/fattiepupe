@@ -1,0 +1,16 @@
+#main.pure-u
+  .content
+
+    = render 'shared/navigation'
+    = render 'shared/error'
+    
+    %h2 Users
+    %table.pure-table
+      %thead
+        %tr
+          %th Name
+          %th View
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td #{link_to "X", user}

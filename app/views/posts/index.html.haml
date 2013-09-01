@@ -1,36 +1,30 @@
-%ul.hmenu
-  = render 'shared/navigation'
-  - flash.each do |name, msg|
-    - if msg.is_a?(String)
-      = content_tag :div, msg, :id => "flash_#{name}"
+#main.pure-u
+  .content
 
-%h1 Listing posts
+    = render 'shared/navigation'
+    = render 'shared/error'
 
-%table
-  %tr
-    %th Name
-    %th Title
-    %th Content
-    %th Image
-    %th
-    %th
-    %th
+    %h2 Listing posts
 
-  - @posts.each do |post|
-    %tr
-      %td= post.name
-      %td= post.title
-      %td= post.content
-      %td= post.image
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %table.pure-table
+      %thead
+        %tr
+          %th Author
+          %th Title
+          %th Content
+          %th Image
+          %th
+          %th
+          %th
 
-%br
+      - @posts.each do |post|
+        %tr
+          %td= post.author
+          %td= link_to post.title, post
+          %td= post.content
+          %td= image_tag post.photo.url(:thumb), size:"80x107"
+          %td= link_to 'Show', post
+          %td= link_to 'Edit', edit_post_path(post)
+          %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Post', new_post_path
-
-
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+    = link_to 'New Post', new_post_path

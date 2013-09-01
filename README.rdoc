@@ -1,9 +1,9 @@
 == Fatti e Pupe
 
-un progetto in via di sviluppo
+Work in progress.
 
 ---
 
-* DB: Mongoid - MongoDB simplifies development by eliminating the schemas and migrations
-* Autotenticazione: Devise
+* DB: Mongoid
+* Autotentication: Devise
 * ENV (Heroku): Figaro (application.yml)

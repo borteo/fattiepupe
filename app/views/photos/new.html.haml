@@ -1,0 +1,45 @@
+/
+  The form_for...remote=>true ensures that the csrf meta tag is carried thru to save
+  the authenticity token. Without this, authentication gets dropped with an ajax call and
+  strange things happen, lost authenticity + possible fall thru logic to next GET action.
+  Also see the setting in development.rb environment. New as of 3.2.3
+= form_for [@gallery, @photo], :remote => true do
+  .page-header
+    %h2
+      Aggiungi immagini all'album: #{@gallery.title}
+  %p#notice= notice
+  .form-actions
+    %input#fileupload.btn.btn-primary{:multiple => "", :name => "photo[photo_file]", :type => "file"}
+      .pull-right= link_to 'Ok', @gallery, :class => 'btn btn-primary btn-wide'
+  .well
+    = render 'gallery_grid', :@gallery => @gallery
+  .form-actions
+    = link_to 'Ok', @gallery, :class => 'btn btn-primary btn-wide pull-right'
+  %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"}
+  %script{:src => "/jquery-file-upload/vendor/jquery.ui.widget.js"}
+  %script{:src => "/jquery-file-upload/jquery.iframe-transport.js"}
+  %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+  %script{:src => "/jquery-file-upload/jquery.fileupload.js"}
+  :javascript
+    $(function () {
+        $('#fileupload').fileupload({
+            dataType: 'json',
+            url: '#{escape_javascript gallery_photos_path(@gallery.id) }',
+            done: function (e, data) {
+                $.each(data.result, function (index, file) { 
+    							src = file.thumbnail_url;
+                   $('').prependTo('#grid');
+                   $('').prependTo('#grid-loading');
+    							console.log('Done!');
+                });
+            },
+    		    progressall: function (e, data) {
+    		        var progress = parseInt(data.loaded / data.total * 100, 10);
+    		        $('#progress .bar').css(
+    		            'width',
+    		            progress + '%'
+    		        );
+    						console.log('progress: '+progress+', data.total: ' + data.total+', data.loaded: ' + data.loaded);
+    		    }
+        });
+    });

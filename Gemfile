@@ -29,8 +29,7 @@ gem 'html5-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the app server
-gem "unicorn", :group => :development
+gem 'thin'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -68,3 +67,11 @@ gem "mini_magick", "~> 3.4"
 
 # To use Jbuilder templates for JSON
 gem "jbuilder"
+# Multiple files upload
+
+gem 'aws-sdk', '~> 1.3.4'
+gem "fog", "~> 1.3.1"
+gem 'jquery-rails'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem "mini_magick", "~> 3.4"
+gem 'jbuilder'

@@ -1,5 +1,12 @@
 FattiEPupe::Application.routes.draw do
 
+  resources :galleries do
+    resources :photos, :except => [:update, :edit]
+  end
+
+  resources :photos
+
+
   root :to => "home#index"
 
   devise_for :users

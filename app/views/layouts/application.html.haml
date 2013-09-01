@@ -15,3 +15,9 @@
 
     -# Javascript at the bottom for fast page loading
     = render 'javascripts'
+    
+    %script{:src => "/jquery-file-upload/vendor/jquery.ui.widget.js"}
+    %script{:src => "/jquery-file-upload/jquery.iframe-transport.js"}
+    %script{:src => "/jquery-file-upload/jquery.fileupload.js"}
+    - javascript_include_tag "http://gettopup.com/releases/latest/top_up-min.js"
+    = yield :js

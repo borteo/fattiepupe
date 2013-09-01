@@ -1,19 +1,34 @@
 #main.pure-u    
   
+  / %a.addthis_counter{"addthis:description" => "An Example Description", "addthis:title" => "An Example Title", "addthis:url" => "http://example.com", :href => "http://www.addthis.com/bookmark.php"}
+
+  
   .content
+    
+    .pure-g-r.l-centered
+      %h1
+        Fatti e Pupe.it
+        -if params[:categoria]
+          = " - #{params[:categoria]}"
+      
     .pure-g-r.l-centered.articles
-
-      .pure-u-1.article
-        .image.pure-u{:src => "/assets/adriana.png", :style => "background-image: url('/assets/adriana.png');"}
-
-        %p.sentence
-          All'et&agrave; di 70 anni, il nostro cuore avr&agrave; battuto per circa 2,5 miliardi di volte
-
-      .pure-u-1.article
-        .image.pure-u{:src => "/assets/boobs.png", :style => "background-image: url('/assets/boobs.png');"}
-
-        %p.sentence
-          Tutti i pianeti del sistema solare ruotano in senso antiorario, tranne Venere che ruota in senso orario
+    
+      - @posts.each do |post|
+        
+        %br
+        / Non so come identare la roba qua sotto nel modo giusto!
+        .pure-u-1.article
+          = link_to image_tag(post.photo.url(:medium), 
+          :class => "pure-u addthis_shareable", 
+          "addthis:url" => "http://www.fattiepupe.herokuapp.com", 
+          "addthis:title" => "fattiepupe.com_cultura"),
+          home_path(post)
+          
+          
+          %p.sentence
+            = post.title
+          %p.sentence
+            = post.content
 
       / .pure-u-1-2
       /   .l-box

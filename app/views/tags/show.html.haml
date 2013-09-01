@@ -1,0 +1,13 @@
+#main.pure-u
+  .content
+
+    = render 'shared/navigation'
+    = render 'shared/error'
+
+    %h2= @tag.name
+
+    %p#notice= notice
+
+    = link_to 'Edit', edit_tag_path(@tag)
+    \|
+    = link_to 'Back', tags_path

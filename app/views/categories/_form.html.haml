@@ -1,0 +1,14 @@
+= simple_form_for @category, :wrapper => :pure, :html => {:class => "pure-form pure-form-aligned"} do |f|
+
+  %fieldset
+    - if @category.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+        %ul
+          - @category.errors.full_messages.each do |category|
+            %li= msg
+
+    = f.input :name
+
+    .pure-controls
+      = f.button :button, 'Save', :class => "pure-button-primary"

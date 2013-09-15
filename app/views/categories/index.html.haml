@@ -1,0 +1,26 @@
+#main.pure-u
+  .content
+
+    = render 'shared/navigation'
+    = render 'shared/error'
+
+    %h2 Listing Categories
+
+    %table.pure-table
+      %thead
+        %tr
+          %th Name
+          %th
+          %th
+          %th
+
+      - @categories.each do |category|
+        %tr
+          %td= category.name
+          %td= link_to 'Show', category
+          %td= link_to 'Edit', edit_category_path(category)
+          %td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    
+    %br
+    .pure-controls
+      = link_to 'New Category', new_category_path, :class => "pure-button pure-button-primary"

@@ -6,6 +6,11 @@
 // Layout styles
 //-----------------------------------------
 
+body, 
+.pure-g [class*="pure-u"], 
+.pure-g-r [class*="pure-u"] {
+    font-family: 'Montserrat', sans-serif;
+}
 
 body {
     color: $font-color;
@@ -13,7 +18,7 @@ body {
 }
 
 .home {
-    background: #EDEEEF url('/assets/noise.png') top left repeat;
+    background: rgb(24, 24, 24);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,7 +26,17 @@ h1, h2, h3, h4, h5, h6 {
     color: $title-color;
     letter-spacing: 0;
     font-weight: bold;
-    @include text-shadow(white 0px 1px 0px);
+}
+
+h1 {
+  
+      color: rgb(252, 126, 130);
+      font-family: "UpperEastSide",serif;
+      font-size: 4em;
+      line-height: 0;
+      text-shadow: none;
+      text-transform: none
+
 }
 
 /* Add transition to containers so they can push in and out */
@@ -124,7 +139,7 @@ aside {
 /* The content div is placed as a wrapper around all the docs */
 .content {
     margin: 0 auto;
-    width: 70%;
+    width: 90%; /* PER MATTEO: Ho messo width 90%, che secondo me rende il sito più spazioso! */
     margin-bottom:50px;
 }
     .content p {
@@ -184,9 +199,8 @@ aside {
 */
 .legal {
     font-size: 80%;
-    border-top: 1px solid #eee;
     padding: 0.5em 0;
-    background: rgb(250, 250, 250);
+    background: rgba(250, 250, 250, 0.01);
 }
 
     .legal-license, .legal-copyright {
@@ -212,6 +226,7 @@ aside {
 */
 
 #menu {
+    background: rgb(36, 36, 36);
     margin-left: -$menu-width; /* "#menu" width */
     width: $menu-width;
     position: fixed;
@@ -219,10 +234,10 @@ aside {
     left: $menu-width;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #191818;
     overflow-y: auto;
     -webkit-overflow-scroll: touch;
-    border-right: 1px solid white;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    @include box-shadow(#111 -2px 0 4px inset);
 }
     #menu a {
         color: #999;
@@ -318,12 +333,8 @@ aside {
     color: #ccc;
 }
 
-/* --------------------------
- * Responsive Styles
- * --------------------------
-*/
 
-@media (max-width: 870px) {
+//@media (max-width: 870px) {
 
     /* Navigation Push Styles */
     #layout {
@@ -345,15 +356,22 @@ aside {
     }
 
     .pure-menu-link {
+        left: 20px;
+        top: 20px;
         position: fixed;
-        left: 0;
         display: block;
     }
 
     #layout.active .pure-menu-link {
         left: $menu-width;
     }
-}
+
+
+/* --------------------------
+ * Responsive Styles
+ * --------------------------
+*/
+
 
 @media (max-width: 767px) {
 
@@ -574,4 +592,22 @@ pre .attribute, pre .variable, pre .support {
 pre .string, pre .support.value  {
     font-weight: normal;
     color: #3b8bba; /* skinbuilder block-mine-text-low with #1f8dd6 as primary */
+}
+
+
+
+
+//-----------------------------------------
+// Categories Page
+//-----------------------------------------
+
+
+ul.grid {
+	list-style-type: none;
+	}
+
+ul.grid li {
+	padding-right: 5%;
+	float: left;
+	width: 25%;
 }

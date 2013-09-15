@@ -4,16 +4,23 @@
     = render 'shared/navigation'
     = render 'shared/error'
 
-    %h2 Listing tags
+    %h2 
+      = @post.title
     
     %p#notice= notice
-
+    
+    = link_to 'Edit', edit_post_path(@post)
+    \|
+    = link_to 'Back', posts_path
+    
+    %p
+      = image_tag(@post.photo.url(:medium), size:"480x640")
     %p
       %b Author:
       = @post.author
     %p
-      %b Title:
-      = @post.title
+      %b Category:
+      = @post.category.name if @post.category
     %p
       %b Tags:
       - @post.tags.each do |tag|
@@ -22,9 +29,5 @@
       %b Content:
       = @post.content
     %p
-      %b Image:
-      = image_tag @post.photo
-
-    = link_to 'Edit', edit_post_path(@post)
-    \|
-    = link_to 'Back', posts_path
+      %b Date:
+      = @post.created_at

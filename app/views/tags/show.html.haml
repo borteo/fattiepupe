@@ -4,13 +4,9 @@
     = render 'shared/navigation'
     = render 'shared/error'
 
-    %h2 Listing tags
+    %h2= @tag.name
 
     %p#notice= notice
-
-    %p
-      %b Name:
-      = @tag.name
 
     = link_to 'Edit', edit_tag_path(@tag)
     \|

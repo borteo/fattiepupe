@@ -3,28 +3,42 @@
 
     = render 'shared/navigation'
     = render 'shared/error'
-
+      
     %h2 Listing posts
 
+    .pure-controls
+      = link_to 'New Post', new_post_path, :class => "pure-button pure-button-primary"
+
+    %br
+      
     %table.pure-table
       %thead
         %tr
-          %th Author
-          %th Title
-          %th Content
           %th Image
-          %th
-          %th
-          %th
+          %th Title
+          %th Category
+          %th Author
+          %th Actions
 
       - @posts.each do |post|
         %tr
+          %td= link_to image_tag(post.photo.url(:thumb), style:"width:120px"), post
+          %td
+            %p= link_to post.title, post
+            %p= link_to "0 Comments and 0 Reactions", "/home/#{post.id}#disqus_thread", style:"font-size:75%;"
+          %td= post.category.name if post.category
           %td= post.author
-          %td= link_to post.title, post
-          %td= post.content
-          %td= image_tag post.photo.url(:thumb), size:"80x107"
-          %td= link_to 'Show', post
-          %td= link_to 'Edit', edit_post_path(post)
-          %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td
+            %p= link_to 'Edit', edit_post_path(post), :class => "pure-button pure-button-secondary"
+            %p= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "pure-button pure-button-error"
 
-    = link_to 'New Post', new_post_path
+    %h2 Users
+    %table.pure-table
+      %thead
+        %tr
+          %th Name
+          %th View
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td #{link_to "X", user}

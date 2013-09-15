@@ -1,5 +1,14 @@
 FattiEPupe::Application.routes.draw do
 
+  match '/admin' => 'admin#index', :as => 'admin_path'
+  match '/random' => 'home#random', :as => 'random_path'
+
+  resources :categories
+  match '/categorie' => 'home#categories', :as => 'categories_public_path'
+
+
+  match '/contatti' => 'contacts#index', :as => 'contacts_path'
+
   resources :galleries do
     resources :photos, :except => [:update, :edit]
   end
@@ -8,11 +17,13 @@ FattiEPupe::Application.routes.draw do
 
 
   root :to => "home#index"
+  match '/home' => 'home#index', :as => 'home_path'
 
   devise_for :users
   resources :users
 
   resources :posts
+  resources :home
 
   resources :tags
   

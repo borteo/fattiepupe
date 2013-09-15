@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+#ruby '1.9.3'
 gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
@@ -54,6 +54,7 @@ gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+gem "disqus"
 
 
 # Single files upload
@@ -67,11 +68,3 @@ gem "mini_magick", "~> 3.4"
 
 # To use Jbuilder templates for JSON
 gem "jbuilder"
-# Multiple files upload
-
-gem 'aws-sdk', '~> 1.3.4'
-gem "fog", "~> 1.3.1"
-gem 'jquery-rails'
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-gem "mini_magick", "~> 3.4"
-gem 'jbuilder'

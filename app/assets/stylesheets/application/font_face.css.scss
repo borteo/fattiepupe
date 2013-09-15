@@ -1,27 +1,12 @@
 @font-face {
     font: {
-       family: 'NexaFree';
+       family: 'UpperEastSide';
        weight: 'normal';
        style: 'normal';
     }
-    src: asset-url('Nexa_Free_Bold-webfont.eot', font);
-    src: asset-url('Nexa_Free_Bold-webfont.eot?#iefix', font) format('embedded-opentype'),
-         asset-url('Nexa_Free_Bold-webfont.woff', font) format('woff'),
-         asset-url('Nexa_Free_Bold-webfont.ttf', font) format('truetype'),
-         asset-url('Nexa_Free_Bold-webfont.svg#BPreplayRegular', font) format('svg');
+    src: asset-url('UpperEastSide-webfont.eot', font);
+    src: asset-url('UpperEastSide-webfont.eot?#iefix', font) format('embedded-opentype'),
+         asset-url('UpperEastSide-webfont.woff', font) format('woff'),
+         asset-url('UpperEastSide-webfont.ttf', font) format('truetype'),
+         asset-url('UpperEastSide-webfont.svg#BPreplayRegular', font) format('svg');
 }
-
-@font-face {
-    font: {
-       family: 'SofiaPro';
-       weight: 'normal';
-       style: 'normal';
-    }
-    src: asset-url('SofiaProLight-webfont.eot', font);
-    src: asset-url('SofiaProLight-webfont.eot?#iefix', font) format('embedded-opentype'),
-         asset-url('SofiaProLight-webfont.woff', font) format('woff'),
-         asset-url('SofiaProLight-webfont.ttf', font) format('truetype'),
-         asset-url('SofiaProLight-webfont.svg#BPreplayRegular', font) format('svg');
-}
-
-
